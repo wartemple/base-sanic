@@ -1,1 +1,0 @@
-sanic server.app

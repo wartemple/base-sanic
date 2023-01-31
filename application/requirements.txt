@@ -1,0 +1,4 @@
+ariadne
+databases[postgresql]
+sanic
+sanic-ext

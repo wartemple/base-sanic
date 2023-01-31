@@ -1,0 +1,1 @@
+sanic --port=7777 --host=0.0.0.0 --factory --auto-reload core.server:create_app

@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  app:
+    build: ./app
+    ports:
+      - 7777:7777
+    depends_on:
+      - db-postgres
+    command:
+      sanic
+      --port=7777
+      --host=0.0.0.0
+      --factory
+      --auto-reload
+      world.server:create_app
+    volumes:
+      - ./app/world:/app/world
+    environment:
+      SANIC_POSTGRES_DSN: "postgres://postgres:postgres@db-postgres:5432/world"
+      SANIC_POSTGRES_MIN: 6
+      SANIC_POSTGRES_MAX: 12
+      SANIC_KEEP_ALIVE_TIMEOUT: 1
+  db-postgres:
+    image: aa8y/postgres-dataset:world
+    ports:
+      - 5432:5432
+    command: ["postgres", "-c", "log_statement=all"]
