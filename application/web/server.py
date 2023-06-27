@@ -43,5 +43,7 @@ def create_app() -> Sanic:
     # 默认健康检查
     app.config.HEALTH = True
     app.config.HEALTH_ENDPOINT = True
+    # 错误返回结果为json
+    app.config.FALLBACK_ERROR_FORMAT = "json"
     app.blueprint(bp)
     return app
