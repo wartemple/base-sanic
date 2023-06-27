@@ -14,6 +14,6 @@ def get_hello_word_view(request):
 
 
 @bp.post('/json_view')
-def get_hello_word_view(request):
+def json_view(request):
     # do something
     return json({"messages": "success"})

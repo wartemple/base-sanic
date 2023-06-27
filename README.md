@@ -23,7 +23,7 @@
 ```
 from .ner.view import bp as ner_bp
 
-bp = Blueprint.group(ner_bp, url_prefix='api/v1', name="ner")
+bp = Blueprint.group(ner_bp, url_prefix='api/v1')
 
 ```
 3. 实现ner的接口

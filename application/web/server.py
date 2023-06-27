@@ -40,6 +40,8 @@ def create_app() -> Sanic:
     app = Sanic("Main", log_config=LOGGINGS)
 
     from web.blueprints.view import bp  # noqa
-
+    # 默认健康检查
+    app.config.HEALTH = True
+    app.config.HEALTH_ENDPOINT = True
     app.blueprint(bp)
     return app
