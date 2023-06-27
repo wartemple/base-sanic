@@ -1,5 +1,6 @@
 from sanic import Sanic
 
+
 LOGGINGS = {
     "version": 1,
     "disable_existing_loggers": False,
@@ -18,8 +19,8 @@ LOGGINGS = {
             "level": "INFO",
             "class": "core.common.EnhancedRotatingFileHandler",
             "filename": "logs/app.log",
-            "when": "M",
-            "interval": 1,
+            "when": "H",
+            "interval": 6,
             "maxBytes": 1024 * 1024 * 50, # 50M
             "backupCount": 40, # 约一个月
             "formatter": "verbose",
@@ -36,7 +37,7 @@ LOGGINGS = {
 }
 
 def create_app() -> Sanic:
-    app = Sanic("GraphQLApp", log_config=LOGGINGS)
+    app = Sanic("Main", log_config=LOGGINGS)
 
     from web.blueprints.view import bp  # noqa
 

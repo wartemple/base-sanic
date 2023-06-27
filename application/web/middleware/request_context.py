@@ -3,7 +3,7 @@ from typing import Any
 
 from sanic import Request, Sanic
 
-app = Sanic.get_app()
+app = Sanic.get_app("Main")
 
 
 @app.after_server_start

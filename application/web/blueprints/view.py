@@ -1,5 +1,5 @@
 from sanic import Blueprint
 
-from .correct.view import bp as correct_bp
+from .example.view import bp as example_bp
 
-bp = Blueprint.group(correct_bp, version=1)
+bp = Blueprint.group(example_bp, url_prefix='api/v1', name="example")
