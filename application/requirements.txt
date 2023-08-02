@@ -1,3 +1,6 @@
-sanic
+sanic>=22.3
 sanic-ext
 pydantic
+
+sanic-testing
+pytest-asyncio

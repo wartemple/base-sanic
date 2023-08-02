@@ -8,11 +8,11 @@ bp = Blueprint("Example", url_prefix="/hello_world")
 
 
 @bp.get('/success')
-def get_hello_word_view(request):
+async def get_hello_word_view(request):
     # do something
-    input = ExampleModel(**request.args)
-    logger.info(input.dict())
-    logger.info(input.name)
+    # input = ExampleModel(**request.args)
+    # logger.info(input.dict())
+    # logger.info(input.name)
     return json({"messages": "success"})
 
 
